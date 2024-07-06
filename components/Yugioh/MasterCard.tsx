@@ -9,7 +9,7 @@ interface Props {
 
 export default function YugiohMasterCard({ params }: Props) {
   return (
-    <div className="w-90 h-fit backdrop-blur-md rounded-lg shadow-md p-8 flex justify-around text-white border-2 border-white">
+    <div className="w-90 h-fit backdrop-blur-xl rounded-lg shadow-md p-8 flex justify-around text-white border border-white">
       <Image
         src={params.card.image}
         alt={`${params.card.name} Card Image`}

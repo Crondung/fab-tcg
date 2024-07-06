@@ -1,32 +1,19 @@
 import YugiohMasterCard from "@/components/Yugioh/MasterCard";
 import { YugiohCard } from "../lib/interfaces";
-
-const card: YugiohCard = {
-  id: "1",
-  name: "Blue Eyes White Dragon",
-  //   image:
-  //     "https://static.wikia.nocookie.net/yugioh/images/f/f3/BlueEyesWhiteDragon-DPKB-EN-SR-1E.png",
-  image: "/BlueEyesWhiteDragon.webp",
-  price: 169,
-  set: "DBKB",
-  edition: "1st",
-};
-
-const cards: YugiohCard[] = [];
-for (let index = 0; index < 12; index++) {
-  cards[index] = card;
-}
+import { fetchCards } from "../lib/fetchCards";
 
 export default function YugiohMasterView() {
+  const cards = fetchCards();
   return (
-    <main className="w-full h-screen bg-yugioh bg-scroll bg-cover bg-no-repeat bg-bottom overflow-y-scroll p-12 grid grid-cols-3 gap-4">
-      {cards.map((card) => (
+    <div className="mt-8 p-12 grid grid-cols-1 md:grid-cols-3 gap-4">
+      {cards.map((card, index) => (
         <YugiohMasterCard
           params={{
             card: card,
           }}
+          key={index}
         />
       ))}
-    </main>
+    </div>
   );
 }

@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter, Poppins } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import { ShoppingCart } from "lucide-react";
+import Navbar from "@/components/Navbar";
 
 const poppins = Poppins({ subsets: ["latin"], weight: "500" });
 
@@ -18,11 +20,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={poppins.className}>
-        <nav className="flex ">
-          <Link href={"yugioh"}>Yu-Gi-Oh!</Link>
-          <Link href={"pokemon"}>Pokémon</Link>
-          <Link href={"other"}>Other</Link>
-        </nav>
+        <Navbar />
         {children}
       </body>
     </html>

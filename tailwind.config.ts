@@ -13,6 +13,16 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
         yugioh: "url(/yugioh-cards-bg.jpg)",
+        "yugioh-blue": "url(/advanced-section-hero-bg.webp)",
+      },
+      keyframes: {
+        wiggle: {
+          "0%, 100%": { transform: "rotate(-3deg)" },
+          "50%": { transform: "rotate(3deg)" },
+        },
+      },
+      animation: {
+        wiggle: "wiggle 200ms ease-in-out",
       },
     },
   },
